@@ -10,7 +10,7 @@ if ($_REQUEST['event'] == 'ONAPPINSTALL') {
     ];
     
     // URL base do widget
-    $widgetUrl = 'https://seu-dominio.com/widget-whatsapp/index.html';
+    $widgetUrl = 'https://jaderfti.github.io/widget-whatsapp/index.html';
     
     // Registra o widget em cada placement
     foreach ($placements as $placement) {
