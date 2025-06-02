@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>WhatsApp Rápido</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="//api.bitrix24.com/api/v1/"></script>
+</head>
+<body>
+    <div class="whatsapp-widget">
+        <!-- Cabeçalho -->
+        <div class="widget-header">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+            <span>Enviar WhatsApp</span>
+        </div>
+        
+        <!-- Número do telefone -->
+        <div class="phone-display">
+            <label>📞 Telefone:</label>
+            <span id="phone-number">Carregando...</span>
+        </div>
+        
+        <!-- Caixa de mensagem -->
+        <div class="message-box">
+            <label>💬 Sua mensagem:</label>
+            <textarea 
+                id="message-text" 
+                placeholder="Digite sua mensagem aqui..."
+                rows="4"
+            ></textarea>
+        </div>
+        
+        <!-- Variáveis disponíveis -->
+        <div class="variables-hint">
+            <small>Dica: Use estas variáveis na mensagem:</small>
+            <div class="variable-list">
+                <span class="variable" onclick="insertVariable('{NOME}')">{NOME}</span>
+                <span class="variable" onclick="insertVariable('{EMPRESA}')">{EMPRESA}</span>
+                <span class="variable" onclick="insertVariable('{EMAIL}')">{EMAIL}</span>
+            </div>
+        </div>
+        
+        <!-- Botões -->
+        <div class="button-group">
+            <button id="send-whatsapp" class="btn-primary">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="20">
+                Abrir WhatsApp
+            </button>
+            <button id="copy-link" class="btn-secondary">
+                📋 Copiar Link
+            </button>
+        </div>
+        
+        <!-- Status -->
+        <div id="status-message" class="status"></div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

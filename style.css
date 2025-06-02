@@ -1,0 +1,260 @@
+/* Reset e base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+    font-size: 14px;
+    color: #333;
+    background: #f5f5f5;
+    padding: 15px;
+}
+
+/* Container principal */
+.whatsapp-widget {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 20px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* Cabeçalho */
+.widget-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.widget-header img {
+    width: 30px;
+    height: 30px;
+}
+
+.widget-header span {
+    font-size: 18px;
+    font-weight: 600;
+    color: #25D366;
+}
+
+/* Display do telefone */
+.phone-display {
+    background: #f8f9fa;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.phone-display label {
+    font-weight: 500;
+    color: #666;
+}
+
+#phone-number {
+    font-weight: 600;
+    color: #333;
+    font-size: 16px;
+}
+
+/* Caixa de mensagem */
+.message-box {
+    margin-bottom: 15px;
+}
+
+.message-box label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #666;
+}
+
+#message-text {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 14px;
+    resize: vertical;
+    transition: border-color 0.3s;
+}
+
+#message-text:focus {
+    outline: none;
+    border-color: #25D366;
+}
+
+/* Dicas de variáveis */
+.variables-hint {
+    background: #f0f8ff;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.variables-hint small {
+    color: #666;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.variable-list {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.variable {
+    background: #e3f2fd;
+    color: #1976d2;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    font-family: monospace;
+    transition: all 0.2s;
+}
+
+.variable:hover {
+    background: #1976d2;
+    color: white;
+    transform: translateY(-1px);
+}
+
+/* Botões */
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+button {
+    flex: 1;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn-primary {
+    background: #25D366;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #20BA5A;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+}
+
+.btn-secondary {
+    background: #f0f0f0;
+    color: #333;
+}
+
+.btn-secondary:hover {
+    background: #e0e0e0;
+}
+
+/* Status */
+.status {
+    padding: 10px;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 13px;
+    display: none;
+    animation: slideIn 0.3s ease;
+}
+
+.status.success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.status.error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.status.warning {
+    background: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeaa7;
+}
+
+/* Animações */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsivo */
+@media (max-width: 480px) {
+    .whatsapp-widget {
+        padding: 15px;
+    }
+    
+    .button-group {
+        flex-direction: column;
+    }
+    
+    button {
+        width: 100%;
+    }
+}
+
+/* Modo escuro (se o Bitrix24 estiver em modo escuro) */
+@media (prefers-color-scheme: dark) {
+    body {
+        background: #1a1a1a;
+        color: #e0e0e0;
+    }
+    
+    .whatsapp-widget {
+        background: #2a2a2a;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    }
+    
+    .phone-display {
+        background: #333;
+    }
+    
+    #message-text {
+        background: #333;
+        color: #e0e0e0;
+        border-color: #444;
+    }
+    
+    .variables-hint {
+        background: #1a3a52;
+    }
+    
+    .variable {
+        background: #2196f3;
+        color: white;
+    }
+}
